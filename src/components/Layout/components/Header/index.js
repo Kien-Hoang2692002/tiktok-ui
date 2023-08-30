@@ -3,14 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleXmark,
   faSpinner,
-  faMagnifyingGlass,
   faEllipsisVertical,
   faLanguage,
   faCircleQuestion,
   faKeyboard,
-  faCloudUpload,
-  faEnvelope,
-  faPaperPlane,
   faMoon,
   faUser,
   faBookmark,
@@ -30,6 +26,13 @@ import { Wrapper as PopperWrapper } from "~/components/Popper";
 import AccountItem from "~/components/AccountItem";
 import Button from "~/components/Button";
 import Menu from "~/components/Popper/Menu";
+import {
+  InboxIcon,
+  MessageIcon,
+  SearchIcon,
+  UploadIcon,
+} from "~/components/Icons";
+import Image from "~/components/Image";
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -160,7 +163,7 @@ function Header() {
             <FontAwesomeIcon className={cx("loading")} icon={faSpinner} />
 
             <button className={cx("search-btn")}>
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
+              <SearchIcon />
             </button>
           </div>
         </HeadlessTippy>
@@ -170,17 +173,17 @@ function Header() {
             <>
               <Tippy content="Tải lên">
                 <button className={cx("action-btn")}>
-                  <FontAwesomeIcon icon={faCloudUpload} />
+                  <UploadIcon />
                 </button>
               </Tippy>
               <Tippy content="Tin nhắn">
                 <button className={cx("action-btn")}>
-                  <FontAwesomeIcon icon={faPaperPlane} />
+                  <MessageIcon />
                 </button>
               </Tippy>
               <Tippy content="Hộp thư">
                 <button className={cx("action-btn")}>
-                  <FontAwesomeIcon icon={faEnvelope} />
+                  <InboxIcon />
                 </button>
               </Tippy>
             </>
@@ -196,10 +199,11 @@ function Header() {
             onChange={handleMenuChange}
           >
             {currentUser ? (
-              <img
+              <Image
                 className={cx("user-avatar")}
                 alt="Nguyen Van A"
                 src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/56ce3bf7d2e9dda0b17f1ef356adc381.jpeg?x-expires=1693551600&x-signature=v5eO4TGnm5vTe0yK%2BU2o699O9hQ%3D"
+                // fallback="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
               />
             ) : (
               <button className={cx("more-btn")}>
