@@ -6,7 +6,7 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 const cx = classNames.bind(styles);
 
-function Menu({ title, onBack }) {
+function Header({ title, onBack }) {
   return (
     <header className={cx("header")}>
       <button className={cx("back-btn")} onClick={onBack}>
@@ -17,4 +17,4 @@ function Menu({ title, onBack }) {
   );
 }
 
-export default Menu;
+export default Header;
